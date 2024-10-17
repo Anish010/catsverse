@@ -48,7 +48,7 @@ function Breeds() {
   return (
     <>
       <NavBar setBreeds={setBreeds} />
-      <Box sx={{ flexGrow: 1, padding: "1rem 0 1rem 1rem" }}>
+      <Box sx={{ flexGrow: 1, padding: "0 0 1rem 1rem" }}>
         {loading ? (
           <Box
             display="flex"
@@ -59,17 +59,26 @@ function Breeds() {
             <CircularProgress />
           </Box>
         ) : breeds && breeds.length > 0 ? (
-          <Masonry columns={4} spacing={2}>
-            {breeds.map((breed) => (
-              <BreedCard
-                key={breed.id}
-                id={breed.id}
-                imageUrl={breed.image?.url}
-                name={breed.name}
-                description={breed.description}
-              />
-            ))}
-          </Masonry>
+          <>
+            <PaginationBar
+              page={page}
+              setPage={setPage}
+              limit={limit}
+              setLimit={setLimit}
+            />
+
+            <Masonry columns={4} spacing={2}>
+              {breeds.map((breed) => (
+                <BreedCard
+                  key={breed.id}
+                  id={breed.id}
+                  imageUrl={breed.image?.url}
+                  name={breed.name}
+                  description={breed.description}
+                />
+              ))}
+            </Masonry>
+          </>
         ) : (
           <Box
             display="flex"

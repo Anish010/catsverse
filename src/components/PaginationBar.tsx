@@ -28,7 +28,7 @@ const PaginationComponent: React.FC<PaginationProps> = ({
       display="flex"
       alignItems="center"
       justifyContent="center"
-      sx={{ marginTop: 4, padding: 2, borderRadius: 2 }}
+      sx={{ marginTop: 2, padding: 2, borderRadius: 2 }}
     >
       <IconButton
         onClick={handlePreviousPage}
