@@ -1,3 +1,11 @@
+# Environment Variables
+
+
+```
+VITE_API="https://api.thecatapi.com/v1/"
+VITE_API_KEY="API KEY"
+```
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
